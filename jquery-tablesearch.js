@@ -8,23 +8,23 @@
 			if (list.length) {
 				$(this).keyup(function() {
 					var value = $(this).val().toLowerCase().trim();
-				  list.each(function(index) {
-				  	if (!index) return;
+					list.each(function(index) {
+						if (!index) return;
 						$(this).find("td").each(function () {
 							var id = $(this).text().toLowerCase().trim();
 							var data = $(this).attr('data-search')||'';
-						  var not_found = (id.indexOf(value) == -1) && (data.indexOf(value) == -1);
-						  $(this).closest('tr').toggle(!not_found);
-						  return not_found;
+							var not_found = (id.indexOf(value) == -1) && (data.indexOf(value) == -1);
+							$(this).closest('tr').toggle(!not_found);
+							return not_found;
 						});
-				  });
+					});
 				});
 			}
 		});
 		return this;
 	}
 	$(function() {
-	  // Usage example:
+		// Usage example:
 		// $('.filter').tablesearch('.filterable tr');
 	});
 })(jQuery);
